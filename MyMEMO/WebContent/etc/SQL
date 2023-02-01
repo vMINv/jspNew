@@ -1,0 +1,15 @@
+CREATE TABLE `user` (
+  `id` varchar(128) NOT NULL,
+  `password` varchar(32) DEFAULT NULL,
+  `name` varchar(32) DEFAULT NULL,
+  `ts` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `feed` (
+  `no` int NOT NULL AUTO_INCREMENT,
+  `id` varchar(128) DEFAULT NULL,
+  `content` longtext,
+  `ts` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
