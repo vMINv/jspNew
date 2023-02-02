@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <context>
-	<Resource name="jdbc/mymemo"
+	<Resource name="jdbc/tlagusals"
 	auth="Container"
 	type="javax.sql.DataSource"
 	driverClassName="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost:3306/mymemo?serverTimezone=UTC"
-	username="root"
-	password="0000"
+	url="jdbc:mysql://tlagusals.cafe24.com:3306/tlagusals?serverTimezone=UTC"
+	username="tlagusals"
+	password="Newnew11@"
 	maxTotal="16"
 	maxIdle="4"
 	maxWaitMillis="-1"/>
