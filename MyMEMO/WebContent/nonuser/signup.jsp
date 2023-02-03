@@ -12,7 +12,7 @@
 <div class="container">
 <form action="signupCheck.jsp" method="post">
 	<div class="mb-3">
-	<input type="text" class="form-control" name="id" placeholder="아이디" required> 
+	<input type="email" class="form-control" name="id" placeholder="이메일" required> 
 	</div>
 	<fieldset>
 	<div class="mb-3">
@@ -24,9 +24,6 @@
 	</fieldset>
 	<div class="mb-3">
 	<input type="text" class="form-control" name="name" placeholder="이름" required> 
-	</div>
-	<div class="mb-3">
-	<input type="text" class="form-control" name="to" placeholder="가입을 확인 받을 이메일을 입력해주세요" required> 
 	</div>
 	<div class="mb-3">
 	<button type="submit" class="form-control btn btn-outline-secondary">회원가입하기</button>

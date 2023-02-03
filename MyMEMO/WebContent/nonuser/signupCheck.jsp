@@ -6,14 +6,13 @@
     pageEncoding="UTF-8"%>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-<link href="/etc/sign-in.css" rel="stylesheet">
+<link href="etc/sign-in.css" rel="stylesheet">
 <%
 	request.setCharacterEncoding("UTF-8");
 
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
 	String name = request.getParameter("name");
-	String to = request.getParameter("to");
 	
 	//중복 아이디 체크
 	if(UserDAO.exsist(id)){//존재, 아이디 사용불가능%>
@@ -47,31 +46,7 @@
 	
 	if(result==1){//가입 성공
 	
-		Map<String, String> emailInfo = new HashMap<String, String>();
-		emailInfo.put("from", "hyunmin04050@gmail.com");
-		emailInfo.put("to", request.getParameter("to"));
-		emailInfo.put("subject", "[구글] 회원가입을 환영합니다.");
-	
-		String htmlContent = "";
-		
-		String templatePath = application.getRealPath("Welcome.html");
-		BufferedReader br = new BufferedReader(new FileReader(templatePath));
-		
-		String oneLine;
-		while((oneLine = br.readLine()) != null ){
-			htmlContent += oneLine + "\n";
-		}
-		br.close();
-		
-		htmlContent = htmlContent.replace("__NAME__", name);
-		htmlContent = htmlContent.replace("__TO__", to);
-		htmlContent = htmlContent.replace("__PASS__", password);
-		
-		emailInfo.put("content", htmlContent);//내용
-		emailInfo.put("format", "text/html;charset=UTF-8");//메일의 형식
-		
-		Mail smtpServer = new Mail();//메일 전송 객체 생성 
-		smtpServer.emailSending(emailInfo);
+	SendMail.sending(id, name);
 	%>
 		<!-- Modal -->
 		<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

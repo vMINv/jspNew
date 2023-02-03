@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<context>
-	<Resource name="jdbc/tlagusals"
+<Context>
+	<Resource 
+	name="jdbc/tlagusals"
 	auth="Container"
 	type="javax.sql.DataSource"
 	driverClassName="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://tlagusals.cafe24.com:3306/tlagusals?serverTimezone=UTC"
+	url="jdbc:mysql://localhost:3306/tlagusals?serverTimezone=Asia/Seoul"
 	username="tlagusals"
 	password="Newnew11@"
 	maxTotal="16"
 	maxIdle="4"
 	maxWaitMillis="-1"/>
-</context>
+</Context>

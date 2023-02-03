@@ -50,8 +50,9 @@
 	    <tr>
 	      <th scope="col">No</th>
 	      <th scope="col">ID</th>
-	      <th scope="col">Date</th>
 	      <th scope="col">Content</th>
+	      <th scope="col">Date</th>
+	      <th scope="col"></th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -61,13 +62,15 @@
 	    <tr>
 	      <th scope="row"><%=feed.getNo() %></th>
 	      <td><%=feed.getId() %></td>
-	      <td><%=feed.getTs() %></td>
 	      <td><%=feed.getContent() %></td>
+	      <td><%=feed.getTs() %></td>
+	      <td><button type="button" class="btn btn-white" id="myBtn"><i class="bi bi-three-dots"></i></button></td>
 	    </tr>
 <%	} %>
 	  </tbody>
 	</table>
 	</div>
+
 <%@ include file="../includes/footer.jsp" %>
 </body>
 </html>

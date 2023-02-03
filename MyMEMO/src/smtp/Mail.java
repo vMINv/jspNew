@@ -35,7 +35,7 @@ public class Mail {
 		auth = new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("hyunmin04050@gmail.com", "cyaibahwrunqxrho");
+				return new PasswordAuthentication("hyunmin04050@gmail.com", "etjprxogejdtbshu");
 			}
 		};
 	}

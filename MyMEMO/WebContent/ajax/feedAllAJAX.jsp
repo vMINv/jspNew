@@ -45,8 +45,8 @@ window.onload = function() {
 	    <tr>
 	      <th scope="col">No</th>
 	      <th scope="col">ID</th>
-	      <th scope="col">Date</th>
 	      <th scope="col">Content</th>
+	      <th scope="col">Date</th>
 	    </tr>
 	  </thead>
 	  <tbody id="ajaxTable">
