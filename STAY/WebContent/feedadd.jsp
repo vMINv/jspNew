@@ -51,7 +51,10 @@ if (sid == null){
 		<textarea class="form-control" name="content" id="summernote" rows="3" placeholder="작성글"></textarea>
 		</div>
 		<div class="mb-3">
-		<button type="submit" class="form-control btn btn-outline-secondary">업로드하기</button>
+		<div class="row">
+		<div class="col-6"><button type="submit" class="form-control btn btn-outline-secondary">등록</button></div>
+		<div class="col-6"><button type="button" class="form-control btn btn-outline-secondary" onclick="location.href='main.jsp'">취소</button></div>
+		</div>
 		</div>
 	</form>
 </div>
