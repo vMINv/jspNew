@@ -5,4 +5,5 @@
 <link href="/etc/css.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<%String sid = (String) session.getAttribute("id"); %>
+<%//String sid = (String) session.getAttribute("id"); %>
+<%String sid = "min"; %>

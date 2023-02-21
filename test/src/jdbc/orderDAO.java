@@ -89,7 +89,7 @@ public class orderDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int fno2 = Integer.parseInt(fno);//디비에 int로 넣어야해서 타입 변경
-		String total2 = Integer.toString(total);//디비에 int로 넣어야해서 타입 변경
+		String total2 = Integer.toString(total);//디비에 varchar로 넣어야해서 타입 변경
 		try {
 			String sql = "INSERT INTO `order` (fno, id, menu, total) VALUES(?, ?, ?, ?)";
 				

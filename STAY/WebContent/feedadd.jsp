@@ -46,7 +46,7 @@ if (sid == null){
 <br>
 <div class="container">
 	<form action="feedCheck.jsp" method="post">
-		<input type="hidden" name="id" value="<%=sid %>"> 
+		<input type="hidden" name="id" value="min"> 
 		<div class="mb-3">
 		<textarea class="form-control" name="content" id="summernote" rows="3" placeholder="작성글"></textarea>
 		</div>

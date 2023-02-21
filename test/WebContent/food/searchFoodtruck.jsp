@@ -1,24 +1,30 @@
-<!--  
-최초작성자 : 심현민 (nimnuyhmihs@gmail.com)
-최초작성일 : 2023/2/20
-
-버전 기록 : 0.1(시작 23/02/20)
-		  0.1(수정 23/02/21)
-		  0.1(종료 23/02/21)
--->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>검색</title>
+    <meta charset="utf-8">
+    <title>검색</title>
 </head>
 <body>
 <%@ include file="../header.jsp"%>
-<% 
-	sid = (String) session.getAttribute("id");
-%>
+			<div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">검색</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        
+        
 <!-- 검색창 -->
 <div class="container">
 	<br>
@@ -34,12 +40,11 @@
 <!-- 가게목록 띄우기 -->
 <br>
 <div class="container">
-<input type='submit' class='form-control btn btn-outline-secondary' value='마커 감추기' onclick="hideMarkers()">
+<button class="btn btn-primary w-100 py-3" type="submit" onclick="hideMarkers()">마커 감추기</button>
 <br><br>
 <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">사진</th>
         <th scope="col">가게명</th>
         <th scope="col">위치</th>
       </tr>
@@ -84,9 +89,7 @@
 				var str = "";
 
 				for(var i = 0; i < results.length; i++){
-					
-					str += "<tr><td>" + results[i].fphoto + "</td>";
-					str += "<td><a href='oneStoreInfo.jsp?fno=" +results[i].fno+ "'>" + results[i].fname + "</a></td>";
+					str += "<tr><td><a href='oneStoreInfo.jsp?fno=" +results[i].fno+ "'>" + results[i].fname + "</a></td>";
 					str += "<td>" + results[i].flocation + "</td></tr>";
 
 					//마커
@@ -142,5 +145,7 @@
 	}
 	
 </script>
+<%@ include file="../footer.jsp"%>        
 </body>
+
 </html>

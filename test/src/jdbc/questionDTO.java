@@ -6,5 +6,5 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class questionDTO {
-	private String id, qtitle, mail, qcon, qpro;
+	private String qno, id, qtitle, mail, qcon, qpro;
 }

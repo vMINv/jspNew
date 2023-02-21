@@ -1,63 +1,89 @@
-<!--  
-최초작성자 : 심현민 (nimnuyhmihs@gmail.com)
-최초작성일 : 2023/2/17
-
-버전 기록 : 0.1(시작 23/02/17)
-		  0.1(수정 23/02/21)
-		  0.1(종료 23/02/21)
--->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="jdbc.*" %>
 <!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>가게 상세보기</title>
+    <meta charset="utf-8">
+    <title>검색</title>
 </head>
 <body>
 <%@ include file="../header.jsp"%>
 <% 
 	String fno = request.getParameter("fno");
-	//String fno = "1";//임시 
 	//sid = (String) session.getAttribute("id");
 	sid = "min";//임시
 %>
-<!-- 정보 -->
-<div class="container">
-	<table class="table table-hover">
-	    <thead>
-	      <tr>
-	        <th scope="row">가게명</th>
-	        <th scope="row">위치</th>
-	        <th scope="row">영업시간</th>
-	      </tr>
-	    </thead>
-		<tbody id="ajaxTable1">
-	    </tbody>
-	</table>
-	<br>
-	<table class="table table-hover">
-	    <thead>
-	      <tr>
-	        <th scope="row">메뉴</th>
-	        <th scope="row">가격</th>
-	      </tr>
-	    </thead>
-		<tbody id="ajaxTable2">
-	    </tbody>
-	</table>
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+             <div class="container text-center my-5 pt-5 pb-4">
+                 <h1 class="display-3 text-white mb-3 animated slideInDown">가게</h1>
+                 <nav aria-label="breadcrumb">
+                     <ol class="breadcrumb justify-content-center text-uppercase">
+                         <li class="breadcrumb-item"><a href="#">Home</a></li>
+                         <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                         <li class="breadcrumb-item text-white active" aria-current="page">Menu</li>
+                     </ol>
+                 </nav>
+             </div>
+         </div>
+     </div>
+     <!-- Navbar & Hero End -->
+
+
+<!-- Menu Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+    	<!-- 가게명 -->
+        <div id="fname" class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        </div>
+        
+        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+            <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+                <li class="nav-item">
+                    <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill">
+                        <i class="fa fa-hamburger fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Special</small>
+                            <h6 class="mt-n1 mb-0">Menu</h6>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+            	<!-- 메뉴, 가격 -->
+                <div id="menu" class="tab-pane fade show p-0 active">
+                    
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="col-12">
+            <div class="row g-4">
+                <div class="col-md-2">
+                </div>
+                <!-- 위치 -->
+                <div class="col-md-5" id="flocation">
+                </div>
+                <!-- 영업시간 -->
+                <div class="col-md-5" id="ftime">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- Menu End -->
+        
+        
+
 
 <input id="fno" type="hidden" value="<%=fno %>">
 <div class="container">
 	<div class="mb-3">
 		<div class="row">
 			<div class="col">
-				<button type="button" class="form-control btn btn-outline-secondary" onclick="location.href='order.jsp?fno='+<%=fno %>">포장하기</button>
+				<button class="btn btn-primary w-100 py-3" type="button" onclick="location.href='order.jsp?fno='+<%=fno %>">포장하기</button>
 			</div>
 			<div class="col">
-				<button type="submit" class="form-control btn btn-outline-secondary" onclick="location.href='review.jsp?fno='+<%=fno %>">리뷰쓰기</button>
+				<button class="btn btn-primary w-100 py-3" type="button" onclick="location.href='review.jsp?fno='+<%=fno %>">리뷰쓰기</button>
 			</div>
 		</div>
 	</div>
@@ -73,19 +99,21 @@
  			success:function(data){
  				var infos = JSON.parse(data.trim());
  				var str = "";
+				str += "<h5 class='section-title ff-secondary text-center text-primary fw-normal'>Food Menu</h5>";
+				str += "<h1 class='mb-5'>"+infos[0].fname+"</h1>";
+ 				$("#fname").html(str);
  				
- 				for(var i = 0; i < infos.length; i++){
- 					
- 					str += "<tr><td>" + infos[i].fname + "</td>";
- 					str += "<td>" + infos[i].flocation + "</td>";
- 					str += "<td>" + infos[i].ftime + "</td></tr>";
- 					
- 				} 
- 				$("#ajaxTable1").html(str);
- 				
- 				var infos = JSON.parse(data.trim());
  				var str = "";
+				str += "<h5 class='section-title ff-secondary text-start text-primary fw-normal'>Location</h5>";
+				str += "<p>"+infos[0].flocation+"</p>";
+ 				$("#flocation").html(str);
  				
+ 				var str = "";
+ 				str += "<h5 class='section-title ff-secondary text-start text-primary fw-normal'>Location</h5>";
+				str += "<p>"+infos[0].ftime+"</p>";
+ 				$("#ftime").html(str);
+ 				
+ 				var str = "";
  				for(var i = 0; i < infos.length; i++){
  					var fmenu = infos[i].fmenu.replace("[","").replace("]","");
  					var fprice = infos[i].fprice.replace("[","").replace("]","");
@@ -94,11 +122,22 @@
  					var keys1 = Object.keys(menu);
  					for (var i=0; i<keys1.length; i++) {
  				    	var key = keys1[i];
- 						str += "<tr><td>" + menu[key] + "</td>";
- 						str += "<td>" + price[key] + "</td></tr>";
+ 						str += "<div class='row g-4'>";
+ 						str +=     "<div class='col-lg'>";
+ 						str +=         "<div class='d-flex align-items-center'>";
+ 						str +=             "<div class='w-100 d-flex flex-column text-start ps-4'>";
+ 						str +=                 "<h5 class='d-flex justify-content-between border-bottom pb-2'>";
+ 						str +=                     "<span>"+menu[key]+"</span>";
+ 						str +=                     "<span class='text-primary'>"+price[key]+"</span>";
+ 						str +=                 "</h5>";
+ 						str +=             "</div>";
+ 						str +=         "</div>";
+ 						str +=     "</div>";
+ 						str += "</div>";
+                    
  				    }
  				}
- 				$("#ajaxTable2").html(str);
+ 				$("#menu").html(str);
  			}
  		});
  	}
@@ -108,5 +147,7 @@
  	}
 	
 </script>
+<%@ include file="../footer.jsp"%>        
 </body>
+
 </html>

@@ -11,6 +11,10 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 import util.ConnectionPool;
 
 //import org.apache.tomcat.jdbc.pool.ConnectionPool;
@@ -146,4 +150,32 @@ public class userDAO {
 		}
 	}
 	
+	public static int perCheck(String id) throws SQLException, NamingException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			String sql = "SELECT per FROM user WHERE id=?";
+			
+			conn = ConnectionPool.get();
+			pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id);
+
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				if(rs.getString("per").equals("ceo")) {
+					return 1;//ceo일 때 1 
+				} else if(rs.getString("per").equals("user")) {
+					return 0;//user일 때 0
+				}
+			}
+			
+		} finally {
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		}
+		return 2;//admin
+	}
 }

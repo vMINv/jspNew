@@ -273,6 +273,8 @@ public class foodDAO {
 				obj.put("ftime", rs.getString(6));
 				obj.put("fmenu", rs.getString(7));
 				obj.put("fprice", rs.getString(8));
+				obj.put("flat", rs.getString(10));
+				obj.put("flon", rs.getString(11));
 			
 				infos.add(obj);
 			}
