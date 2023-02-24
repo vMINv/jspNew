@@ -3,18 +3,25 @@
 	<item key="J2EE_EXPORT_OVERWRITE" value="true"/>
 	<item key="J2EE_EXPORT_SOURCE" value="true"/>
 	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v8.5 (3)"/>
 		<item value="Apache Tomcat v8.5 (1)"/>
 		<item value="Apache Tomcat v8.5"/>
 		<item value="NULL_RUNTIME"/>
 	</list>
 	<list key="J2EE_EXPORT_JST_WEB">
-		<item value="/Users/shimhyunmin/Desktop/FoodTruck.war"/>
-		<item value="/Users/shimhyunmin/Desktop/심현민.war"/>
-		<item value="/Users/shimhyunmin/Desktop/MyMEMO.war"/>
-		<item value="/Users/shimhyunmin/Desktop/hello.war"/>
-		<item value="/Users/shimhyunmin/Desktop/MyMEMOVer3.war"/>
+		<item value="/Users/shimhyunmin/Downloads/FoodTruck00.war"/>
+		<item value="/Users/shimhyunmin/Downloads/FoodTruck0.war"/>
+		<item value="/Users/shimhyunmin/Downloads/ROOT.war"/>
+		<item value="/Users/shimhyunmin/Documents/FoodTruck_Web_104222222.war"/>
+		<item value="/Users/shimhyunmin/Documents/심현민java.war"/>
+		<item value="/Users/shimhyunmin/Documents/test.war"/>
 	</list>
 	<list key="J2EE_IMPORT_null">
+		<item value="/Users/shimhyunmin/Downloads/FoodTruck.war"/>
+		<item value="/Users/shimhyunmin/Downloads/FoodTruck_Web.war"/>
+		<item value="/Users/shimhyunmin/Downloads/FoodTruck_Web0203.war"/>
+		<item value="/Users/shimhyunmin/Downloads/FoodTruck_Web_1042.war"/>
+		<item value="/Users/shimhyunmin/Downloads/FoodTruck_Web_최종.war"/>
 		<item value="/Users/shimhyunmin/Downloads/GroupTalkV2.war"/>
 	</list>
 </section>
