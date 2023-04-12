@@ -42,7 +42,7 @@
 
 <script>
 	//발급 받은 키
-	Kakao.init("66d56477cc3509f1797562626578e950");
+	Kakao.init("카카오맵 앱 키");
 	
 	function kakaoLogin() {
 		window.Kakao.Auth.login({
