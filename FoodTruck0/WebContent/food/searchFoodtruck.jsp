@@ -86,7 +86,7 @@ if (sid == null){
 </div>
 
 <!-- 함수 -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fc7abe9b9479ffa297474094a4964dcf"></script>
+<script type="text/javascript" src="//dapi캌kakao.com/v2/maps/sdk.js?appkey=카카오맵 앱키"></script>
 <script>
 	var container = document.getElementById('map');
 	
