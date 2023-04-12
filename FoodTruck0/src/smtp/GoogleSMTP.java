@@ -29,7 +29,7 @@ public class GoogleSMTP {
         auth = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("qz6789.sk@gmail.com", "oaxvriwzwdllhjdu");
+                return new PasswordAuthentication("구글 이메일", "앱 비밀번호");
             }
         };
     }
